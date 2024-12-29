@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Customer Order Management System</h1>
+        <p>The page is loaded and the server is running!</p>
+    </header>
+
+    <main>
+        <!-- Real-Time Order Updates -->
+        <section>
+            <h2>Real-Time Order Updates</h2>
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Status</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Orders will be dynamically populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Create New Order -->
+        <section>
+            <h2>Create New Order</h2>
+            <form id="order-form" class="form-style">
+                <input type="text" id="customer_name" placeholder="Customer Name" required>
+                <input type="number" id="total_price" placeholder="Total Price" required>
+                <select id="status">
+                    <option value="pending">Pending</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="canceled">Canceled</option>
+                </select>
+                <button type="submit" class="btn btn-create"><i class="fas fa-plus"></i> Create Order</button>
+            </form>
+        </section>
+
+        <!-- Update Order Status -->
+        <section>
+            <h2>Update Order Status</h2>
+            <form id="update-status-form" class="form-style">
+                <input type="number" id="update_order_id" placeholder="Order ID" required>
+                <select id="update_status">
+                    <option value="pending">Pending</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="canceled">Canceled</option>
+                </select>
+                <button type="submit" class="btn btn-update"><i class="fas fa-sync-alt"></i> Update Status</button>
+            </form>
+        </section>
+
+        <!-- Role-Based Access -->
+        <section>
+            <h2>Role-Based Access</h2>
+            <select id="role-selector" class="dropdown">
+                <option value="agent">Agent</option>
+                <option value="manager">Manager</option>
+            </select>
+            <p id="role-info"></p>
+        </section>
+
+        <!-- Order Reports -->
+        <section id="reports-section">
+            <h2>Order Reports</h2>
+            <button id="fetch-reports-btn" class="btn btn-report"><i class="fas fa-chart-bar"></i> Generate Reports</button>
+            <table id="reports-table">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Report data will be dynamically populated here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Customer Order Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
